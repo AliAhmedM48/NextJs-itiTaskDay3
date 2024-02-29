@@ -1,5 +1,4 @@
 import ProductTable from '@/components/Dashboard/ProductTable'
-import Dashboard from '@/components/Dashboard/dashboard'
 import Head from 'next/head'
 
 function index() {

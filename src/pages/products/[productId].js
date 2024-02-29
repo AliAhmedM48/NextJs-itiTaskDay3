@@ -14,20 +14,14 @@ export async function getStaticPaths() {
     }
 }
 export async function getStaticProps(context) {
-
     const { params } = context;
     console.log(params.productId);
-    // const res = await fetch('https://dummyjson.com/products/' + params.productId)
-    // const data = await res.json();
-
     const data = await productsGetOneById(params.productId)
     console.log(data);
     return {
         props: {
             details: data
         },
-        // notFound: true
-
     }
 }
 

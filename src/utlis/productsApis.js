@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000/api';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
 
 const productsGetAll = async () => {
     const res = await fetch(baseUrl + '/products')
