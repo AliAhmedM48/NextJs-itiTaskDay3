@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context;
     console.log(params.productId);
+
     const data = await productsGetOneById(params.productId)
     console.log(data);
     return {
@@ -27,6 +28,7 @@ export async function getStaticProps(context) {
 
 
 const ProductId = ({ details }) => {
+
     return (
         <>
             <Head>

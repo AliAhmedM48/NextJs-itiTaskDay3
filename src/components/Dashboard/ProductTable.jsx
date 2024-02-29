@@ -1,4 +1,4 @@
-import { productCreate, productDeleteById, productsGetAll, productsGetOneById } from '@/utlis/productsApis';
+import { productDeleteById, productsGetAll, productsGetOneById } from '@/utlis/productsApis';
 import React, { useEffect, useState } from 'react'
 import ProductModal from './ProductModal';
 
