@@ -6,7 +6,7 @@ import React from 'react'
 export async function getServerSideProps(context) {
     console.log(context);
     try {
-        const api = 'https://newsapi.org/v2/everything?q=tesla&from=2024-01-28&sortBy=publishedAt&apiKey=03e274ff76704186912d79634e8ba545'
+        const api = 'https://newsapi.org/v2/everything?q=tesla&apiKey=03e274ff76704186912d79634e8ba545'
         const response = await fetch(api);
         const data = await response.json()
         console.log(data);

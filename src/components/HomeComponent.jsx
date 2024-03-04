@@ -24,7 +24,7 @@ const HomeComponent = () => {
       })
   }
   function getNews() {
-    const api = 'https://newsapi.org/v2/everything?q=tesla&from=2024-01-28&sortBy=publishedAt&apiKey=03e274ff76704186912d79634e8ba545'
+    const api = 'https://newsapi.org/v2/everything?q=tesla&apiKey=03e274ff76704186912d79634e8ba545'
 
     setIsLoading(true);
     fetch(api)

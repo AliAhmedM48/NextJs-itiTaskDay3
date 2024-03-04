@@ -4,6 +4,8 @@ import React from "react";
 
 const ProductsCardComponent = (props) => {
   const { id, thumbnail, title, description, brand, price } = props.product;
+  const { isLogged } = props
+  console.log(isLogged);
   return (
     <div className="">
       <div className="card text-start">
@@ -42,12 +44,12 @@ const ProductsCardComponent = (props) => {
           <p>
             Price: <span>{price}</span>
           </p>
-          <Link
+          {isLogged && <Link
             href={"/products/" + id.toString()}
             className="btn btn-dark text-white"
           >
             See More...
-          </Link>
+          </Link>}
         </div>
       </div>
     </div>

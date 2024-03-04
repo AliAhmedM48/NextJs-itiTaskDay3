@@ -26,8 +26,9 @@ export default function handler(req, res) {
         } else {
             res.status(200).json({ status: 'success', product });
         }
-
-    } else if (req.method === 'PUT') {
+        //#endregion
+    }
+    else if (req.method === 'PUT') {
         // * UPDATE ONE
         //#region 
         console.log('UPDATE ONE');
@@ -44,9 +45,8 @@ export default function handler(req, res) {
         } else {
             res.status(404).json({ error: 'Product not found' });
         }
-
+        //#endregion
     }
-
     else if (req.method === 'DELETE') {
         console.log('DELETE');
         //#region 4

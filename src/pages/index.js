@@ -9,6 +9,7 @@ import Testimonial from "@/components/Feedback/TestimonialSection";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
   return (
     <>
       <Head>

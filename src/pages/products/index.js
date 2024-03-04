@@ -6,16 +6,25 @@ import React from 'react';
 
 let isLoading = false;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data = await productsGetAll();
     console.log(data);
     return {
         props: {
             products: data
         }
-
     }
 }
+// export async function getStaticProps() {
+//     const data = await productsGetAll();
+//     console.log(data);
+//     return {
+//         props: {
+//             products: data
+//         }
+
+//     }
+// }
 
 const index = ({ products }) => {
     if (isLoading) return <LoadingScreen />
