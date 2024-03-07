@@ -3,7 +3,6 @@ import React from "react";
 
 const CarouselComponent = (props) => {
   const { images } = props;
-  console.log(images);
   return (
     <>
       <div id="carouselExample" className="carousel slide">

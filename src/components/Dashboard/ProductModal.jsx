@@ -1,7 +1,7 @@
 import { productCreate, productUpdateOneById } from '@/utlis/productsApis';
 import { useEffect, useState } from 'react';
 
-function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
+function ProductModal({ isOpen, onClose, selectedProductToEdit, setProducts, products }) {
     const initialFormValues = {
         title: '',
         description: '',
@@ -15,14 +15,12 @@ function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
         images: []
     };
     const [formData, setFormData] = useState(initialFormValues);
-    console.log(selectedProductToEdit);
     useEffect(() => { if (selectedProductToEdit) setFormData(selectedProductToEdit); else setFormData(initialFormValues); }, [selectedProductToEdit]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Here you can handle the form submission
         // For example, you can send formData to an API endpoint
-        console.log(formData);
         const { title, price, brand, stock } = formData
         if (!title || !price || !brand || !stock) return alert('invalid data')
 
@@ -32,8 +30,9 @@ function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
             productUpdateOneById(id, formData).
                 then(json => {
                     onClose();
-                    console.log();
-                    console.log(json.products[json.updatedProductIndex])
+                    const newProduct = json.products
+                    console.log(newProduct);
+                    setProducts({ ...products, ...newProduct })
                 })
                 .catch(err => console.error('Error updating product:', err))
 
@@ -42,7 +41,8 @@ function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
             productCreate(formData)
                 .then(res => {
                     onClose();
-                    console.log(res);
+                    console.log(res.products);
+
                 })
                 .catch(err => console.log('Error creating product:', err));
         }
@@ -50,15 +50,33 @@ function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(e.target);
-        console.log(name);
 
         setFormData(prevState => ({
             ...prevState,
             [name]: value
         }));
     };
-
+    // Handle file upload
+    const handleFileUpload = async (event) => {
+        const file = event.target.files[0];
+        const formData = new FormData();
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL
+        formData.append('file', file);
+        try {
+            const response = await fetch(baseUrl + '/products', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setFormData({ ...formData, thumbnail: data.url }); // Set the URL of the uploaded image
+            } else {
+                console.error('Failed to upload image');
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+    };
     return (
         <>
             {isOpen && (
@@ -77,6 +95,14 @@ function ProductModal({ isOpen, onClose, selectedProductToEdit }) {
                                     <div className="mb-4">
                                         <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
                                         <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                    </div>
+                                    {/* <div className="mb-4">
+                                        <label htmlFor="thumbnail" className="block text-gray-700 text-sm font-bold mb-2">Thumbnail:</label>
+                                        <input type="file" accept="image/*" name="thumbnail" id="thumbnail" value={formData.thumbnail} onChange={handleFileUpload} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                                    </div> */}
+                                    <div className="mb-4">
+                                        <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                                        <input type="text" name="description" id="description" value={formData.description} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="price" className="block text-gray-700 text-sm font-bold mb-2">Price:</label>

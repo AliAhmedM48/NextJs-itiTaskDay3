@@ -4,8 +4,6 @@ import ProductModal from './ProductModal';
 
 function ProductTable() {
     const [products, setProducts] = useState([]);
-    const [isNewProductModalOpen, setIsNewProductModalOpen] = useState(false);
-    const [selectedProductToEdit, setSelectedProductToEdit] = useState(null);
 
     const fetchData = async () => {
         try {
@@ -46,11 +44,7 @@ function ProductTable() {
         }
     }
 
-    // Function to handle closing the modal
-    const handleCloseModal = () => {
-        setSelectedProductToEdit(null); // Reset selected product
-        setIsNewProductModalOpen(false); // Close the modal
-    };
+
 
     return (<>
         {/*
@@ -104,24 +98,7 @@ function ProductTable() {
                 </tbody>
             </table>
         </div>
-        <div className='bg-black'>
 
-            <ProductModal selectedProductToEdit={selectedProductToEdit} isOpen={isNewProductModalOpen} onClose={handleCloseModal} />
-
-        </div>
-        <button
-            onClick={() => setIsNewProductModalOpen(true)}
-            className="group fixed right-10 bottom-10 inline-block focus:outline-none focus:ring" href="#">
-            <span
-                className="absolute inset-0 translate-x-1.5 rounded-full translate-y-1.5 bg-gray-800 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
-            ></span>
-
-            <span
-                className="relative inline-block border-2 border-current rounded-full text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-circle"><circle cx="12" cy="12" r="10" /><path d="M8 12h8" /><path d="M12 8v8" /></svg>
-            </span>
-        </button>
     </>)
 }
 

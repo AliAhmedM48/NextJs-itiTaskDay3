@@ -1,16 +1,16 @@
 [
   {
-    "title": "nijn",
-    "description": "",
-    "price": "46",
+    "title": "Ali Ahmed",
+    "description": "p2",
+    "price": "2",
     "discountPercentage": "",
     "rating": "",
-    "stock": "46",
-    "brand": "vds",
+    "stock": "215",
+    "brand": "dxw2s",
     "category": "",
     "thumbnail": "",
     "images": [],
-    "id": 27
+    "id": 25
   },
   {
     "id": 2,
@@ -429,64 +429,6 @@
       "https://cdn.dummyjson.com/product-images/24/3.jpg",
       "https://cdn.dummyjson.com/product-images/24/4.jpg",
       "https://cdn.dummyjson.com/product-images/24/thumbnail.jpg"
-    ]
-  },
-  {
-    "id": 25,
-    "title": "Gulab Powder 50 Gram",
-    "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
-    "price": 70,
-    "discountPercentage": 13.58,
-    "rating": 4.87,
-    "stock": 47,
-    "brand": "Dry Rose",
-    "category": "groceries",
-    "thumbnail": "https://cdn.dummyjson.com/product-images/25/thumbnail.jpg",
-    "images": [
-      "https://cdn.dummyjson.com/product-images/25/1.png",
-      "https://cdn.dummyjson.com/product-images/25/2.jpg",
-      "https://cdn.dummyjson.com/product-images/25/3.png",
-      "https://cdn.dummyjson.com/product-images/25/4.jpg",
-      "https://cdn.dummyjson.com/product-images/25/thumbnail.jpg"
-    ]
-  },
-  {
-    "id": 26,
-    "title": "Plant Hanger For Home",
-    "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
-    "price": 41,
-    "discountPercentage": 17.86,
-    "rating": 4.08,
-    "stock": 131,
-    "brand": "Boho Decor",
-    "category": "home-decoration",
-    "thumbnail": "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg",
-    "images": [
-      "https://cdn.dummyjson.com/product-images/26/1.jpg",
-      "https://cdn.dummyjson.com/product-images/26/2.jpg",
-      "https://cdn.dummyjson.com/product-images/26/3.jpg",
-      "https://cdn.dummyjson.com/product-images/26/4.jpg",
-      "https://cdn.dummyjson.com/product-images/26/5.jpg",
-      "https://cdn.dummyjson.com/product-images/26/thumbnail.jpg"
-    ]
-  },
-  {
-    "id": 27,
-    "title": "Flying Wooden Bird",
-    "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
-    "price": 51,
-    "discountPercentage": 15.58,
-    "rating": 4.41,
-    "stock": 17,
-    "brand": "Flying Wooden",
-    "category": "home-decoration",
-    "thumbnail": "https://cdn.dummyjson.com/product-images/27/thumbnail.webp",
-    "images": [
-      "https://cdn.dummyjson.com/product-images/27/1.jpg",
-      "https://cdn.dummyjson.com/product-images/27/2.jpg",
-      "https://cdn.dummyjson.com/product-images/27/3.jpg",
-      "https://cdn.dummyjson.com/product-images/27/4.jpg",
-      "https://cdn.dummyjson.com/product-images/27/thumbnail.webp"
     ]
   }
 ]

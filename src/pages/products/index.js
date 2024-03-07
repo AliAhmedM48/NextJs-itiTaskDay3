@@ -8,13 +8,13 @@ let isLoading = false;
 
 export async function getServerSideProps() {
     const data = await productsGetAll();
-    console.log(data);
     return {
         props: {
-            products: data
+            initialProducts: data
         }
     }
 }
+
 // export async function getStaticProps() {
 //     const data = await productsGetAll();
 //     console.log(data);
@@ -26,15 +26,14 @@ export async function getServerSideProps() {
 //     }
 // }
 
-const index = ({ products }) => {
+const index = ({ initialProducts }) => {
     if (isLoading) return <LoadingScreen />
-    console.log(products);
     return (
         <>
             <Head>
                 <title>Products</title>
             </Head>
-            <div className='container'><ProdcutsComponent {...products} /></div>
+            <div className='container'><ProdcutsComponent {...initialProducts} /></div>
         </>
     );
 };

@@ -17,9 +17,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
   return (
     <>
       <SessionProvider session={session}>
-        <div className="h-dvh">
+        <div className="">
           <Navbar />
-          <div className="h-[calc(100vh-4rem)]">
+          <div className="">
             <Component {...pageProps} />
           </div>
         </div>

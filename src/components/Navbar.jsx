@@ -8,7 +8,6 @@ export default function Navbar() {
   let isLogged = false;
 
   if (session) { isLogged = true };
-  console.log(isLogged);
   let router = useRouter()
 
 
@@ -29,15 +28,15 @@ export default function Navbar() {
                 {isLogged && <Link href="/products" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Products
                 </Link>}
-                {isLogged && <Link href="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                {/* {isLogged && <Link href="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   News
-                </Link>}
-                {isLogged && <Link href="/dashboard" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                </Link>} */}
+                {/* {isLogged && <Link href="/dashboard" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Dashboard
-                </Link>}
-                <Link href="/concepts" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                </Link>} */}
+                {/* <Link href="/concepts" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Next.JS Concepts
-                </Link>
+                </Link> */}
                 {isLogged && <Link legacyBehavior href="/api/auth/signout" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   <a onClick={(e) => {
                     e.preventDefault()

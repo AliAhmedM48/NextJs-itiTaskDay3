@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
@@ -13,12 +14,13 @@ function Footer() {
                             ea nihil.
                         </p>
 
-                        <a
-                            href="#"
+                        <Link
+
+                            href="/signin"
                             className="mt-8 inline-block rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-gray-800 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
                         >
                             Get Started
-                        </a>
+                        </Link>
                     </div>
 
                     <div
